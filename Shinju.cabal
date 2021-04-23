@@ -1,0 +1,48 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 579c78bcbed233cc1151b925f9b6ab1dc5a46a1e7a8ed360e9c71c10bbeaf7ef
+
+name:           Shinju
+version:        0.0.0.1
+description:    Please see the README on GitHub at <https://github.com/adpextwindong/Shinju#readme>
+homepage:       https://github.com/adpextwindong/Shinju#readme
+bug-reports:    https://github.com/adpextwindong/Shinju/issues
+author:         George Takumi Crary
+maintainer:     tcrary@gmail.com
+copyright:      2021 George Takumi Crary
+license:        BSD2
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/adpextwindong/Shinju
+
+library
+  exposed-modules:
+      Shinju.Cli.Control
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite Shinju-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_Shinju
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Shinju
+    , base >=4.7 && <5
+  default-language: Haskell2010
