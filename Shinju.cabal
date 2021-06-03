@@ -27,11 +27,14 @@ source-repository head
 
 library
   exposed-modules:
-      Shinju.Cli.Control
+      Shinju.Cli.Control,
+      Shinju.Script.Task
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      base >=4.7 && <5,
+      mtl >= 2.2.2
+
   default-language: Haskell2010
 
 test-suite Shinju-test
