@@ -20,6 +20,7 @@ data TaskException = TaskException Message Trace
 runTask :: e -> Task e a -> IO a
 runTask e (T t) = runReaderT t e
 
+--TODO needs an applicative instance
 instance Monad (Task e) where
     return      = T. return
     m >>= k     = T . ReaderT $ \r -> do { a <- runTask r m; runTask r (k a) }
