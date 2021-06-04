@@ -41,3 +41,11 @@ data FindFile = DoneFile |
 search :: (FilePath -> Bool) -> FilePath -> SearchStyle -> Free FindDir a
 search = undefined
 -- Given some predicate and a directory to go search
+
+--NOTES
+--For a cli version we just need to generate an IO monad that something else can run
+--Mocking a file system with a RoseTree containing FP's and modifying it at each bind would be nice to
+--simulate --dry-run or somethign
+--Generating a handler for servant is still an open question. Maybe another framework is better
+--A batch cli version could just substitute a replacement strategy everywhere and use a phantom type
+--around an IO to differentiate Batch' IO () and Interactive' IO ()
